@@ -54,9 +54,9 @@ jobs:
           fi
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
+          python-version: '3.12'
 
       # This should be pulled from cache, if there's not a new version
       - name: Install PlatformIO
@@ -65,7 +65,7 @@ jobs:
           pip install --upgrade platformio
 
       - name: Restore or Cache Platforms and Libraries
-        uses: actions/cache@v3.3.1
+        uses: actions/cache@v4.0.0
         id: cache_pio
         with:
           path: ~/.platformio
