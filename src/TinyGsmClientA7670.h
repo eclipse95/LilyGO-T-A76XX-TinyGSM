@@ -604,10 +604,10 @@ class TinyGsmA7670 : public TinyGsmModem<TinyGsmA7670>,
       }
       // Set pointers
       if (lat != NULL){
-          *lat = ilat;
+          *lat = ilat * (north == 'N' ? 1 : -1);
       }
       if (lon != NULL){
-          *lon = ilon;
+          *lon = ilon * (east == 'E' ? 1 : -1);
       }
       if (speed != NULL) *speed = ispeed;
       if (alt != NULL) *alt = ialt;
